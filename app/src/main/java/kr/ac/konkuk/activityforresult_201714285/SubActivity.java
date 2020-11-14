@@ -28,7 +28,7 @@ public class SubActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent in = new Intent(SubActivity.this, SubActivity2.class);//버튼을 누르면 SubActivity2를 불러오게 합니다.
-                startActivityForResult(in, GET_STRING2);//SubActivity2의 request code를 지정하고 시작합니다.
+                startActivityForResult(in, GET_STRING2);//SubActivity2에 request code를 지정하고 시작합니다.
             }
         });
 
@@ -56,8 +56,8 @@ public class SubActivity extends AppCompatActivity {
 
         super.onActivityResult(requestCode, resultCode, data);
         if (requestCode == GET_STRING2) {//requestCode로 SubActivity2를 구별합니다.
-            if (resultCode == RESULT_OK) {//SubActivity2에서 보낸 data를
-                text.setText(data.getStringExtra("b"));//text에 저장하고 출력합니다.
+            if (resultCode == RESULT_OK) {//SubActivity2에서 보낸 data를 받습니다.
+                text.setText(data.getStringExtra("b"));//data b를 text에 저장하고 출력합니다.
 
             }
         }

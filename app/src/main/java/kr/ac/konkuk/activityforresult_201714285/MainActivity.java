@@ -24,7 +24,7 @@ TextView text2;
       button.setOnClickListener(new View.OnClickListener(){
           public void onClick(View arg0){
               Intent in = new Intent(MainActivity.this,SubActivity.class);//버튼을 누르면 SubActivity를 불러오게 합니다.
-              startActivityForResult(in,GET_STRING);//SubActivity의 request code를 지정하고 시작합니다.
+              startActivityForResult(in,GET_STRING);//SubActivity에 request code를 지정하고 시작합니다.
           }
       });
     }
@@ -34,8 +34,8 @@ TextView text2;
         super.onActivityResult(requestCode, resultCode, data);
         if (requestCode == GET_STRING) {//requestCode로 SubActivity를 구별합니다.
             if (resultCode == RESULT_OK) {//SubActivity에서 보낸 2개의 데이터를 받습니다.
-                text1.setText(data.getStringExtra("a"));//data a를 text1에 출력합니다.
-                text2.setText(data.getStringExtra("c"));//data c를 text2에 출력합니다.
+                text1.setText(data.getStringExtra("a"));//data a를 text1에 저장하고 출력합니다.
+                text2.setText(data.getStringExtra("c"));//data c를 text2에 저장하고 출력합니다.
             }
         }
 
